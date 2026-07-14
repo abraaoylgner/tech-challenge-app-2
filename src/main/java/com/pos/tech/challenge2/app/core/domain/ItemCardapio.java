@@ -4,11 +4,11 @@ import java.math.BigDecimal;
 
 public class ItemCardapio {
     private Long id;
-    private String nome; // [cite: 37]
-    private String descricao; // [cite: 38]
-    private BigDecimal preco; // [cite: 39]
-    private boolean disponivelApenasRestaurante; // [cite: 40]
-    private String caminhoFoto; // [cite: 41]
+    private String nome;
+    private String descricao;
+    private BigDecimal preco;
+    private boolean disponivelApenasRestaurante;
+    private String caminhoFoto;
     private Long idRestaurante;
 
     public ItemCardapio(Long id, String nome, String descricao, BigDecimal preco, boolean disponivelApenasRestaurante, String caminhoFoto, Long idRestaurante) {
