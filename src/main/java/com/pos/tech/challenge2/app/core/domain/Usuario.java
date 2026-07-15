@@ -23,6 +23,10 @@ public class Usuario {
         this.dataUltimaAlteracao = dataUltimaAlteracao;
     }
 
+    public Usuario() {
+
+    }
+
     public Long getId() {
         return id;
     }
