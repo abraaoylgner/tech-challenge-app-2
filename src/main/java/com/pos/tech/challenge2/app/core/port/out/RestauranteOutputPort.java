@@ -7,4 +7,5 @@ public interface RestauranteOutputPort {
     Restaurante salvar(Restaurante restaurante);
     Optional<Restaurante> buscarPorId(Long id);
     List<Restaurante> buscarTodos();
+    void excluir(Long id);
 }

@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "usuarios")
 @Getter
@@ -16,7 +18,26 @@ public class UsuarioEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private TipoUsuario tipoUsuario;
+    private String nome;
+
+    @Column(unique = true, nullable = false)
+    private String email;
+
+    @Column(unique = true, nullable = false)
+    private String login;
+
+    @Column(nullable = false)
+    private String senha;
+
+    @Enumerated(EnumType.STRING)
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "tipo_usuario_id", nullable = false)
+    private TipoUsuarioEntity tipoUsuario;
+
+    @Embedded
+    private EnderecoEmbeddable endereco;
+
+    private LocalDateTime dataUltimaAlteracao;
+
 }

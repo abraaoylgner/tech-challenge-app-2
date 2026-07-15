@@ -6,4 +6,6 @@ public interface RestauranteInputPort {
     Restaurante criar(Restaurante restaurante);
     Restaurante buscarPorId(Long id);
     List<Restaurante> buscarTodos();
+    Restaurante atualizar(Long id, Restaurante restaurante);
+    void excluir(Long id);
 }

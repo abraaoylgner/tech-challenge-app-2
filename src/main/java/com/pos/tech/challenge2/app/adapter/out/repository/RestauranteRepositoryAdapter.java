@@ -32,4 +32,9 @@ public class RestauranteRepositoryAdapter implements RestauranteOutputPort {
     public List<Restaurante> buscarTodos() {
         return restauranteRepository.findAll().stream().map(mapper::toDomain).toList();
     }
+
+    @Override
+    public void excluir(Long id) {
+        restauranteRepository.deleteById(id);
+    }
 }
