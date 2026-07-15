@@ -150,6 +150,13 @@ Isso fará o build da imagem da aplicação Java e fará o deploy junto com o ba
 3. **Acesse a aplicação:**
    A API estará disponível em `http://localhost:8082`.
 
+## 🧪 Como rodar os testes
+
+Para garantir a qualidade do código entregue, o projeto contempla testes automatizados.
+Para rodar a suíte de testes (unitários e de integração)  e gerar o relatório de cobertura, execute na raiz do projeto:
+
+```bash
+mvn clean test
 
 
 ```
