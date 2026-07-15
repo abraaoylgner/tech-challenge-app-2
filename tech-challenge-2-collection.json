@@ -1,0 +1,230 @@
+type: collection.insomnia.rest/5.0
+name: tech-challenge-app-2
+meta:
+  id: wrk_bf96a7d1f9fa4ac392b517ed8bbc7bb7
+  created: 1784082195939
+  modified: 1784082195939
+  description: ""
+collection:
+  - url: http://localhost:8080/v1/usuarios
+    name: Criar usuario
+    meta:
+      id: req_ced91953c28a4bd1b2db8496646bfa90
+      created: 1784082211273
+      modified: 1784154420369
+      isPrivate: false
+      description: ""
+      sortKey: -1784082211273
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Miguel Albuquerque",
+          "email": "Miguel@teste.com",
+          "login": "miguel",
+          "senha": "miguel",
+          "idTipoUsuario": 3,
+          "endereco": {
+            "rua": "Rua Leonardo Bonato",
+            "numero": "123",
+        		"bairro": "Xaxim",
+            "cidade": "Curitiba",
+        		"estado": "Parana",
+            "cep": "80000-000"
+          }
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8081/v1/tipos-usuario
+    name: Criar tipo usuario
+    meta:
+      id: req_ff9ffceeb3284f4480c61121eae45b49
+      created: 1784082520661
+      modified: 1784153208547
+      isPrivate: false
+      description: ""
+      sortKey: -1784082520662
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome": "DONO_RESTAURANTE"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_8cb94b817d5b47b78c5a0642f658bbcc
+      - name: User-Agent
+        value: insomnia/11.3.0
+        id: pair_f132c788729642c8994749f790089934
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8081/v1/auth/login
+    name: Login
+    meta:
+      id: req_fda9ecc9ab074dcc87fd233dbce513b7
+      created: 1784152220543
+      modified: 1784152558558
+      isPrivate: false
+      description: ""
+      sortKey: -1784152220543
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+         	"login": "joao123",
+          "senha": "joao"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: none
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8081/v1/usuarios?nome=Joao
+    name: Busca por nome
+    meta:
+      id: req_1753cacc3c6b4a22a603c4ac7b66e4de
+      created: 1784152488527
+      modified: 1784152649463
+      isPrivate: false
+      description: ""
+      sortKey: -1784152488527
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWNoLWNoYWxsZW5nZS1hcHAiLCJzdWIiOiJqb2FvMTIzIiwidGlwbyI6IkNMSUVOVEUiLCJleHAiOjE3ODQxNTk1Mzl9.b5QJ72u78YjiFLTTLL2FfoWdhQzTTNIDlFiVq1UDkr4
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8081/v1/restaurantes
+    name: Criar Restaurante
+    meta:
+      id: req_e97e39d98a8f4c80baa1f602bd56f283
+      created: 1784152690115
+      modified: 1784154465490
+      isPrivate: false
+      description: ""
+      sortKey: -1784152690115
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome": "Pernambuco",
+        	 "endereco": {
+            "rua": "Rua Leonardo Bonato",
+            "numero": "123",
+        		"bairro": "Xaxim",
+            "cidade": "Curitiba",
+        		"estado": "Parana",
+            "cep": "80000-000"
+          },
+        	"tipoCozinha": "Brasileira/Nordestina",
+        	"horarioFuncionamento": "9:00 até as 18:00",
+        	"idDono": 2
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWNoLWNoYWxsZW5nZS1hcHAiLCJzdWIiOiJqb2FvMTIzIiwidGlwbyI6IkNMSUVOVEUiLCJleHAiOjE3ODQxNTk3MzR9.-zdSRBAw960FBmfl5hxaeHOW4di-0fRc1hdPlGUI1DY
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8081/v1/itens-cardapio
+    name: Criar Item Cardápio
+    meta:
+      id: req_00350df0f3b94b97852bf129aa24388f
+      created: 1784153774949
+      modified: 1784154568835
+      isPrivate: false
+      description: ""
+      sortKey: -1784153774949
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome": "Rabada",
+        	"descricao": "Uma delicia de prato nordestino",
+        	"preco": 50.00,
+        	"disponivelApenasRestaurante": false,
+        	"caminhoFoto": "OneDrive-Desktop-PÓS-\\Fase 2 -Data Guardian",
+        	"idRestaurante": 1
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWNoLWNoYWxsZW5nZS1hcHAiLCJzdWIiOiJqb2FvMTIzIiwidGlwbyI6IkNMSUVOVEUiLCJleHAiOjE3ODQxNTk3MzR9.-zdSRBAw960FBmfl5hxaeHOW4di-0fRc1hdPlGUI1DY
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_7aebb62bc1ebe43cdd976417891eb071dfa25511
+    created: 1784082195986
+    modified: 1784082195986
+environments:
+  name: Base Environment
+  meta:
+    id: env_7aebb62bc1ebe43cdd976417891eb071dfa25511
+    created: 1784082195972
+    modified: 1784082195972
+    isPrivate: false
