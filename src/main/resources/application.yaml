@@ -1,12 +1,12 @@
 server:
-  port: 8083
+  port: 8081
 
 spring:
   application:
     name: app
 
   datasource:
-    url: jdbc:postgresql://localhost:5433/tech_challenge_2_data
+    url: jdbc:postgresql://localhost:5432/tech_challenge_2_data
     username: postgres
     password: challenge
     driver-class-name: org.postgresql.Driver
